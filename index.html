@@ -16,7 +16,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Ctext%20x%3D%2210%22%20y%3D%2227%22%20font-family%3D%22Times%20New%20Roman%2C%20serif%22%20font-size%3D%2232%22%20fill%3D%22%231f3a2e%22%3E%E2%88%AB%3C%2Ftext%3E%3C%2Fsvg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #f5f3ee;
@@ -28,8 +28,7 @@
       --accent: #1f3a2e;
       --accent-soft: #2f5344;
       --col: 760px;
-      --serif-display: "Instrument Serif", "Times New Roman", Georgia, serif;
-      --serif-body: "Newsreader", "Iowan Old Style", Georgia, "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
       --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
     }
 
@@ -40,7 +39,7 @@
     body {
       background: var(--bg);
       color: var(--ink);
-      font-family: var(--serif-body);
+      font-family: var(--sans);
       font-size: 18px;
       line-height: 1.65;
       font-optical-sizing: auto;
@@ -79,7 +78,7 @@
     }
 
     /* Header */
-    header.top { padding: 32px 0 0; }
+    header.top { padding: 44px 0 0; }
     .top-inner {
       display: flex;
       align-items: center;
@@ -107,47 +106,37 @@
       width: 9px;
       height: 9px;
       border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 3px rgba(31, 58, 46, 0.14);
+      background: #dc2626;
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
       display: inline-block;
     }
 
     /* Hero */
-    .hero { padding: 96px 0 72px; }
-    .mark {
-      font-family: var(--serif-display);
-      font-style: italic;
-      color: var(--accent);
-      font-size: clamp(140px, 22vw, 240px);
-      line-height: 0.8;
-      margin: 0 0 12px;
-      letter-spacing: -0.02em;
-      display: block;
-      transform: translateX(-8px);
-    }
+    .hero { padding: 160px 0 112px; }
     h1.headline {
-      font-family: var(--serif-display);
-      font-size: clamp(70px, 14vw, 148px);
-      line-height: 0.9;
-      letter-spacing: -0.03em;
-      font-weight: 400;
+      font-family: var(--sans);
+      font-size: clamp(70px, 14vw, 140px);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      font-weight: 600;
       margin: 0 0 28px;
       color: var(--ink);
     }
     .tagline {
-      font-family: var(--serif-body);
+      font-family: var(--sans);
       font-size: clamp(20px, 2.6vw, 26px);
       line-height: 1.35;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.015em;
       color: var(--ink);
       margin: 0 0 28px;
-      font-weight: 400;
+      font-weight: 500;
       max-width: 620px;
       text-wrap: balance;
     }
     .tagline em {
       font-style: italic;
       color: var(--accent);
+      font-weight: 500;
     }
     .meta {
       font-family: var(--mono);
@@ -163,22 +152,20 @@
       from { opacity: 0; transform: translateY(12px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .hero .mark,
     .hero h1.headline,
     .hero .tagline,
     .hero .meta {
       opacity: 0;
       animation: fadeUp 800ms cubic-bezier(.2,.7,.2,1) forwards;
     }
-    .hero .mark     { animation-delay: 40ms; }
-    .hero h1.headline { animation-delay: 160ms; }
-    .hero .tagline  { animation-delay: 260ms; }
-    .hero .meta     { animation-delay: 360ms; }
+    .hero h1.headline { animation-delay: 80ms; }
+    .hero .tagline    { animation-delay: 200ms; }
+    .hero .meta       { animation-delay: 320ms; }
     @media (prefers-reduced-motion: reduce) {
-      .hero .mark, .hero h1.headline, .hero .tagline, .hero .meta { animation: none; opacity: 1; }
+      .hero h1.headline, .hero .tagline, .hero .meta { animation: none; opacity: 1; }
     }
 
-    section { padding: 52px 0; }
+    section { padding: 72px 0; }
 
     p { margin: 0 0 1.1em; }
     p:last-child { margin-bottom: 0; }
@@ -188,12 +175,12 @@
     .prose .tight { font-size: 17px; color: var(--ink-soft); line-height: 1.6; }
 
     h2.section-title {
-      font-family: var(--serif-display);
-      font-size: clamp(32px, 4.6vw, 44px);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      font-weight: 400;
-      margin: 0 0 32px;
+      font-family: var(--sans);
+      font-size: clamp(28px, 3.8vw, 38px);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      font-weight: 600;
+      margin: 0 0 20px;
       color: var(--ink);
     }
     h2.section-title em { font-style: italic; color: var(--accent); }
@@ -244,7 +231,7 @@
       line-height: 1.25;
     }
     .pill-note {
-      font-family: var(--serif-body);
+      font-family: var(--sans);
       font-size: 14px;
       color: var(--ink-soft);
       font-style: italic;
@@ -277,20 +264,21 @@
       border-bottom: 1px solid var(--rule);
       align-items: start;
     }
-    ol.numbered > li:first-child { padding-top: 4px; }
+    ol.numbered > li:first-child { padding-top: 20px; }
     ol.numbered > li:last-child { border-bottom: none; }
     ol.numbered > li::before {
       content: counter(step);
-      font-family: var(--serif-display);
-      font-style: italic;
-      font-size: 74px;
-      line-height: 0.78;
+      font-family: var(--sans);
+      font-style: normal;
+      font-size: 62px;
+      font-weight: 600;
+      line-height: 0.85;
       color: var(--accent);
       letter-spacing: -0.04em;
-      padding-top: 2px;
+      padding-top: 6px;
     }
     ol.numbered > li .step-body {
-      font-family: var(--serif-body);
+      font-family: var(--sans);
       font-size: 18px;
       line-height: 1.65;
       color: var(--ink);
@@ -319,7 +307,7 @@
     }
     ul.launches > li:last-child { border-bottom: 1px solid var(--rule-strong); }
     .launch-title {
-      font-family: var(--serif-body);
+      font-family: var(--sans);
       font-size: 20px;
       line-height: 1.3;
       color: var(--ink);
@@ -337,7 +325,7 @@
 
     /* Discontinuation reflection */
     .reflection p {
-      font-family: var(--serif-body);
+      font-family: var(--sans);
       font-size: 22px;
       line-height: 1.5;
       letter-spacing: -0.005em;
@@ -351,97 +339,9 @@
       margin-top: 10px;
     }
 
-    /* What's next band */
-    .next-band {
-      background: var(--bg-deep);
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      padding: 72px 0 64px;
-      margin-top: 64px;
-    }
-    .next-band section { padding: 0; }
-    .next-intro { margin-bottom: 36px; }
-    .next-intro p { font-size: 19px; }
-
-    .projects {
-      display: flex;
-      flex-direction: column;
-      border-top: 1px solid var(--rule-strong);
-    }
-    .project {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: center;
-      padding: 26px 0;
-      border-bottom: 1px solid var(--rule-strong);
-      color: var(--ink);
-      text-decoration: none;
-    }
-    a.project { border-bottom: 1px solid var(--rule-strong); }
-    .project-meta {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: 8px;
-    }
-    .project-name {
-      font-family: var(--serif-display);
-      font-size: 30px;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      font-weight: 400;
-      margin-bottom: 6px;
-      color: var(--ink);
-    }
-    .project-desc {
-      font-family: var(--serif-body);
-      font-size: 17px;
-      line-height: 1.55;
-      color: var(--ink-soft);
-      max-width: 560px;
-    }
-    .project-arrow {
-      font-family: var(--serif-display);
-      font-size: 26px;
-      color: var(--accent);
-      transition: transform 220ms cubic-bezier(.2,.7,.2,1), opacity 180ms ease;
-      display: inline-block;
-      padding-right: 2px;
-      line-height: 1;
-    }
-    a.project:hover .project-name { color: var(--accent); }
-    a.project:hover .project-arrow { transform: translateX(8px); }
-    .project.muted .project-arrow { opacity: 0.28; }
-
-    .elsewhere {
-      margin-top: 44px;
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-    }
-    .elsewhere-label { display: block; margin-bottom: 12px; }
-    .elsewhere-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 20px;
-      align-items: center;
-    }
-    .elsewhere-links a {
-      color: var(--ink);
-      border-bottom-color: var(--rule-strong);
-      padding-bottom: 1px;
-    }
-    .elsewhere-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-    .elsewhere-sep { color: var(--rule-strong); user-select: none; }
-
     /* Footer */
     footer {
-      padding: 72px 0 96px;
+      padding: 112px 0 128px;
       font-family: var(--mono);
       font-size: 11.5px;
       letter-spacing: 0.14em;
@@ -458,29 +358,26 @@
     /* Responsive */
     @media (max-width: 680px) {
       .wrap { padding: 0 22px; }
-      .hero { padding: 72px 0 56px; }
-      .mark { font-size: clamp(110px, 26vw, 180px); }
-      h1.headline { font-size: clamp(58px, 16vw, 100px); }
+      .hero { padding: 112px 0 80px; }
+      h1.headline { font-size: clamp(52px, 15vw, 88px); letter-spacing: -0.04em; }
       .tagline { font-size: 19px; }
-      section { padding: 40px 0; }
+      section { padding: 56px 0; }
       .band { grid-template-columns: 1fr; gap: 12px; padding: 20px 0; }
       .band-label { padding-top: 0; }
-      ol.numbered > li { grid-template-columns: 68px 1fr; gap: 18px; padding: 22px 0; }
-      ol.numbered > li::before { font-size: 56px; }
+      ol.numbered > li { grid-template-columns: 56px 1fr; gap: 18px; padding: 22px 0; }
+      ol.numbered > li::before { font-size: 44px; }
       .reflection p { font-size: 19px; }
       ul.launches > li { grid-template-columns: 1fr; gap: 6px; }
       .launch-meta { font-size: 11px; }
-      .project-name { font-size: 26px; }
     }
     @media (max-width: 400px) {
       body { font-size: 17px; }
       header.top { padding-top: 24px; }
       .brand, .status { font-size: 10.5px; letter-spacing: 0.16em; }
-      .mark { font-size: 100px; }
-      h1.headline { font-size: 54px; }
+      h1.headline { font-size: 48px; }
       .tagline { font-size: 18px; }
       .meta { font-size: 11.5px; letter-spacing: 0.06em; }
-      h2.section-title { font-size: 28px; }
+      h2.section-title { font-size: 26px; }
     }
   </style>
 </head>
@@ -497,7 +394,6 @@
 
   <main>
     <section class="hero wrap" aria-labelledby="headline">
-      <span class="mark" aria-hidden="true">&#x222B;</span>
       <h1 class="headline" id="headline">Integral</h1>
       <p class="tagline">AI-native communication for <em>high-signal communities</em>.</p>
       <p class="meta">
@@ -547,10 +443,7 @@
         <div class="band" role="listitem">
           <span class="band-label">Infrastructure</span>
           <div class="pills">
-            <span class="pill">Supabase (self-hosted)</span>
-            <span class="pill">Postgres + RLS</span>
-            <span class="pill">Edge Functions</span>
-            <span class="pill">Realtime</span>
+            <span class="pill">Postgres</span>
             <span class="pill">Google Cloud Run</span>
             <span class="pill">Cloudflare Workers</span>
           </div>
@@ -564,7 +457,7 @@
       <ol class="numbered">
         <li>
           <div class="step-body">
-            Messages flowed through a real-time pipeline built on <span class="tech">Supabase Realtime</span> and <span class="tech">Edge Functions</span>, captured in a multi-tenant Postgres store with row-level security so every community owned its own slice of the graph.
+            Messages flowed through a real-time pipeline captured in a multi-tenant <span class="tech">Postgres</span> store with row-level security, so every community owned its own slice of the graph.
           </div>
         </li>
         <li>
@@ -596,10 +489,6 @@
           <span class="launch-title"><em>#2</em> Product of the Day, Product Hunt</span>
           <span class="launch-meta">Jun 2025</span>
         </li>
-        <li>
-          <span class="launch-title"><em>Winner</em>, Cloudflare Hackathon — sponsored by AgentOps &amp; MultiOn</span>
-          <span class="launch-meta">2024</span>
-        </li>
       </ul>
     </section>
 
@@ -608,52 +497,6 @@
       <p class="tight">This page remains as a record of what was built. The company memorial is at <a href="https://learningloop.com">learningloop.com</a>.</p>
     </section>
   </main>
-
-  <div class="next-band">
-    <section class="wrap" aria-labelledby="next">
-      <h2 class="section-title" id="next">What I&rsquo;m building now</h2>
-      <div class="next-intro prose">
-        <p>I&rsquo;m <strong>Sina Meraji</strong>, Integral&rsquo;s builder. After Learning Loop I&rsquo;m working solo — smaller surface area, shorter feedback loops, open by default.</p>
-      </div>
-
-      <div class="projects">
-        <a class="project" href="https://github.com/sinameraji/decision-journal-electron">
-          <div>
-            <div class="project-meta">Shipped · Open source · Desktop</div>
-            <div class="project-name">Decision Journal</div>
-            <div class="project-desc">An AI desktop app inspired by Farnam Street&rsquo;s decision-journal framework — a quiet place to record decisions, the reasoning behind them, and what actually happened.</div>
-          </div>
-          <span class="project-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-
-        <div class="project muted" aria-label="Universal Basic Education">
-          <div>
-            <div class="project-meta">In progress · Desktop</div>
-            <div class="project-name">Universal Basic Education</div>
-            <div class="project-desc">Essential guides for living a good life in 2026 — skills, mental models, mentors, community, and AI, in one desktop app.</div>
-          </div>
-          <span class="project-arrow" aria-hidden="true">&rarr;</span>
-        </div>
-      </div>
-
-      <div class="elsewhere">
-        <span class="elsewhere-label">Elsewhere</span>
-        <div class="elsewhere-links">
-          <a href="https://github.com/sinameraji">GitHub</a>
-          <span class="elsewhere-sep" aria-hidden="true">/</span>
-          <a href="https://learningloop.com">Learning Loop</a>
-          <span class="elsewhere-sep" aria-hidden="true">/</span>
-          <a href="https://www.ted.com/talks/sina_meraji_world_s_next_education_system">TEDx talk</a>
-          <span class="elsewhere-sep" aria-hidden="true">/</span>
-          <a href="https://what.beehiiv.com/">Newsletter</a>
-          <span class="elsewhere-sep" aria-hidden="true">/</span>
-          <a href="https://x.com/sinasanm">X</a>
-          <span class="elsewhere-sep" aria-hidden="true">/</span>
-          <a href="https://www.linkedin.com/in/sinameraji">LinkedIn</a>
-        </div>
-      </div>
-    </section>
-  </div>
 
   <footer class="wrap">
     <span>Integral &nbsp;·&nbsp; 2023 – 2025 &nbsp;·&nbsp; archived</span>
